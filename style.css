@@ -11,6 +11,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Zeyada', cursive;
+  flex-wrap: wrap; /* Ensure content can wrap and not overflow */
 }
 
 .paper {
@@ -19,8 +20,12 @@ body {
   background-position: center center;
   padding: 20px 50px;
   transform: rotateZ(-5deg);
-  box-shadow: 1px 15px 20px 0px rgba(0,0,0,0.5);
-  position: absolute;
+  box-shadow: 1px 15px 20px 0px rgba(0, 0, 0, 0.5);
+  position: relative; /* Changed from absolute to relative */
+  margin: 10px; /* Add spacing between elements */
+  width: 100%; /* Ensure they don’t overflow horizontally */
+  max-width: 400px; /* Set a max-width for large screens */
+  text-align: center; /* Center text */
   transition: transform 0.3s ease-in-out;
 }
 
@@ -78,9 +83,10 @@ p {
   }
 
   .paper {
-    padding: 10px;
     max-width: 90%;
+    padding: 15px;
     transform: none;
+    margin-bottom: 20px; /* Add some spacing between each paper */
   }
 
   .paper.heart {
@@ -106,6 +112,7 @@ p {
   .paper {
     max-width: 95%;
     padding: 5px;
+    margin-bottom: 20px; /* Ensure enough spacing on small screens */
   }
 
   .paper.heart {
