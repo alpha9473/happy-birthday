@@ -1,49 +1,48 @@
 @import url('https://fonts.googleapis.com/css2?family=Zeyada&display=swap');
 
-
-
-
 body {
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  background-size: 1000px;
+  background-size: cover;
   background-image: url("https://www.psdgraphics.com/wp-content/uploads/2022/01/white-math-paper-texture.jpg");
   background-position: center center;
+  margin: 0;
+  padding: 0;
+  font-family: 'Zeyada', cursive;
 }
 
 .paper {
   background-image: url("https://i0.wp.com/textures.world/wp-content/uploads/2018/10/2-Millimeter-Paper-Background-copy.jpg?ssl=1");
   background-size: 500px;
   background-position: center center;
-  padding: 20px 100px;
-/*  min-width: 800px; */
-  
+  padding: 20px 50px;
   transform: rotateZ(-5deg);
   box-shadow: 1px 15px 20px 0px rgba(0,0,0,0.5);
-  
   position: absolute;
+  transition: transform 0.3s ease-in-out;
 }
 
 .paper.heart {
-  position: relative;
   width: 200px;
   height: 200px;
   padding: 0;
   border-radius: 50%;
+  background-color: pink;
 }
 
 .paper.image {
   padding: 10px;
+  text-align: center;
 }
+
 .paper.image p {
-  font-size: 30px;
+  font-size: 24px;
 }
 
 img {
-  max-height: 200px;
+  max-height: 150px;
   width: 100%;
   user-select: none;
 }
@@ -64,9 +63,61 @@ img {
 
 p {
   font-family: 'Zeyada';
-  font-size: 50px;
-  color: rgb(0,0,100);
-  opacity: 0.75;
+  font-size: 36px;
+  color: rgb(0, 0, 100);
+  opacity: 0.85;
   user-select: none;
-  filter: drop-shadow(2px 1.5px 1px rgba(0,0,105,0.9));
+  text-shadow: 2px 2px 4px rgba(0, 0, 105, 0.7);
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .paper {
+    padding: 10px;
+    max-width: 90%;
+    transform: none;
+  }
+
+  .paper.heart {
+    width: 150px;
+    height: 150px;
+  }
+
+  img {
+    max-height: 100px;
+  }
+
+  p {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 0;
+    justify-content: flex-start;
+  }
+
+  .paper {
+    max-width: 95%;
+    padding: 5px;
+  }
+
+  .paper.heart {
+    width: 120px;
+    height: 120px;
+  }
+
+  img {
+    max-height: 80px;
+  }
+
+  p {
+    font-size: 20px;
+  }
 }
