@@ -1,58 +1,51 @@
 @import url('https://fonts.googleapis.com/css2?family=Zeyada&display=swap');
 
+
+
+
 body {
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-size: cover;
+
+  background-size: 1000px;
   background-image: url("https://www.psdgraphics.com/wp-content/uploads/2022/01/white-math-paper-texture.jpg");
   background-position: center center;
-  margin: 0;
-  padding: 0;
-  font-family: 'Zeyada', cursive;
-  flex-wrap: wrap; /* Allow content to wrap */
-  overflow: hidden; /* Prevent scrolling when not needed */
 }
 
 .paper {
   background-image: url("https://i0.wp.com/textures.world/wp-content/uploads/2018/10/2-Millimeter-Paper-Background-copy.jpg?ssl=1");
   background-size: 500px;
   background-position: center center;
-  padding: 20px 50px;
+  padding: 20px 100px;
+/*  min-width: 800px; */
+  
   transform: rotateZ(-5deg);
-  box-shadow: 1px 15px 20px 0px rgba(0, 0, 0, 0.5);
-  position: relative; /* Changed to relative for better stacking */
-  margin: 10px;
-  width: 300px; /* Set a default width */
-  max-width: 90%;
-  text-align: center;
-  transition: transform 0.3s ease-in-out;
-  cursor: grab; /* Indicate draggable */
+  box-shadow: 1px 15px 20px 0px rgba(0,0,0,0.5);
+  
+  position: absolute;
 }
 
 .paper.heart {
+  position: relative;
   width: 200px;
   height: 200px;
   padding: 0;
   border-radius: 50%;
-  background-color: pink;
 }
 
 .paper.image {
   padding: 10px;
 }
-
 .paper.image p {
-  font-size: 24px;
-  margin: 5px 0;
+  font-size: 30px;
 }
 
 img {
-  max-height: 150px;
+  max-height: 200px;
   width: 100%;
   user-select: none;
-  pointer-events: none; /* Prevent image from capturing events */
 }
 
 .paper.heart::after {
@@ -70,64 +63,10 @@ img {
 }
 
 p {
-  font-family: 'Zeyada', cursive;
-  font-size: 36px;
-  color: rgb(0, 0, 100);
-  opacity: 0.85;
+  font-family: 'Zeyada';
+  font-size: 50px;
+  color: rgb(0,0,100);
+  opacity: 0.75;
   user-select: none;
-  text-shadow: 2px 2px 4px rgba(0, 0, 105, 0.7);
-}
-
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-  body {
-    flex-direction: column;
-    padding: 10px;
-  }
-
-  .paper {
-    width: 80%;
-    padding: 15px;
-    margin-bottom: 20px;
-    transform: rotateZ(0deg); /* Remove rotation on smaller screens */
-  }
-
-  .paper.heart {
-    width: 150px;
-    height: 150px;
-  }
-
-  img {
-    max-height: 100px;
-  }
-
-  p {
-    font-size: 28px;
-  }
-}
-
-@media (max-width: 480px) {
-  body {
-    padding: 0;
-    justify-content: flex-start;
-  }
-
-  .paper {
-    width: 95%;
-    padding: 10px;
-    margin-bottom: 15px;
-  }
-
-  .paper.heart {
-    width: 120px;
-    height: 120px;
-  }
-
-  img {
-    max-height: 80px;
-  }
-
-  p {
-    font-size: 20px;
-  }
+  filter: drop-shadow(2px 1.5px 1px rgba(0,0,105,0.9));
 }
