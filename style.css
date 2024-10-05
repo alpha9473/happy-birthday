@@ -14,6 +14,12 @@ body {
   background-position: center center;
    background-attachment: fixed;
 }
+@media only screen and (max-width: 768px) {
+  body {
+    background-size: cover; /* Adjust size to ensure it fits smaller screens */
+    background-attachment: fixed; /* Ensure the background remains static on mobile */
+  }
+}
 
 .paper {
   background-image: url("https://i0.wp.com/textures.world/wp-content/uploads/2018/10/2-Millimeter-Paper-Background-copy.jpg?ssl=1");
